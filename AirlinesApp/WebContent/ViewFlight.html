@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main Page</title>
+    <link rel="stylesheet" type="text/css" href="css/viewFlight.css">
+    <link rel = "stylesheet" href ="bootstrap/css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src = "js/ViewFlight.js"></script>
+    <script src="js/format.js"></script>
+    <script src = "bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+</head>
+<body>
+        
+
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #8c8f92;opacity:0.7;color:white;">
+                <ul class = "navbar-nav mr-auto" id = "adminNav">
+                    <a href="AdminWindow.html" class="navbar-brand">Flaego Airlines</a>
+                    <a href = "UserView.html" id="userView" style="padding-right: 30px;color: white; text-decoration: none">User View</a>
+                    <a href = "LoggedInUser.html" id="userView" style="padding-right: 30px;color: white; text-decoration: none">User Profile</a>
+                    
+                </ul>
+                <ul class = "navbar-nav mr-auto" id = "userNav">
+                    <a href="AdminWindow.html" class="navbar-brand">Flaego Airlines</a>
+                    <a href = "LoggedInUser.html" id="userView" style="padding-right: 30px;color:white; text-decoration: none">User View</a>
+                   
+                </ul>
+                <ul class = "navbar-nav mr-auto" id = "unauthenticatedNav">
+                    <a href="main.html" class="navbar-brand">Flaego Airlines</a>
+                </ul>
+               
+                <a href="" id="logoutLink" style="padding-right: 30px;color:white; text-decoration: none">Log Out</a>
+        </nav>
+
+        <div class="container">
+                <div id="myModal" class="modal fade" role="dialog" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Ticket Booking/Purchase</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Do you want to book/purchase ticket? </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id = "btnOneWay">One Way</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id = "btnRoundtrip">Roundtrip</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id = "btnClose">Cancel</button>
+                            
+                        </div>
+                        </div>
+                        
+                    </div>
+            </div>
+
+            <div class="container">
+                    <div id="deleteModal" class="modal fade" role="dialog" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Delete Flight</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Do you want to delete flight? </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id = "btnYes">Yes</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id = "btnClose">Cancel</button>
+                                    
+                                </div>
+                                </div>
+                                
+                    </div>
+            </div>
+                  
+        <div class="container" style="max-width:650px;height:650px;padding:40px 20px;background:#bab6ba;opacity: 0.6;margin-top:30px;">
+                <h3 class="text-center">Flight</h3>
+                <table class='table borderless'>
+                    <tr>
+                        <td>Flight Number:</td>
+                        <td id = "flightNumCell"></td>
+                    </tr>
+                    <tr>
+                        <td>Departure Time:</td>
+                        <td id = "departureTimeCell"></td>
+                    </tr>
+                    <tr>
+                        <td>Arrival Time:</td>
+                        <td id = "arrivalTimeCell"></td>
+                    </tr>
+                    <tr>
+                        <td>Departure:</td>
+                        <td id = "departureCell"></td>
+                    </tr>
+                    <tr>
+                        <td>Arrival:</td>
+                        <td id = "arrivalCell"></td>
+                    </tr>
+                    <tr>
+                        <td>Seat Number:</td>
+                        <td id = "seatNumCell"></td>
+                    </tr>
+                    <tr>
+                        <td>Ticket Price:</td>
+                        <td id = "ticketPriceCell"></td>
+                    </tr>
+                    <tr>
+                        <td>Available Seats:</td>
+                        <td id = "availableSeatsCell"></td>
+                    </tr>
+                    <tr>
+                       <td></td>
+                       <td></td>
+                    </tr>
+                </table>
+                <button type="button" value="Edit" id ="editSubmit" class="btn btn-secondary btn-block" style="width:300px;background-color: #585555;color: white; margin-left: 150px;">Edit</button>
+                <button type="button" value="Delete" id ="deleteSubmit" class="btn btn-secondary btn-block"  style="width:300px;background-color: #585555;color: white; margin-left: 150px;">Delete</button>
+                <button type="button" value="Book" id ="buySubmit" class="btn btn-secondary btn-block"  style="width:300px;background-color: #585555;color: white; margin-left: 150px;">Book/Purchase Ticket</button>
+            </div>
+
+            <div class="container" style="width:1800px;margin-top:30px;">
+                <h3 class="text-center" style="color:white">Booked Tickets</h3>
+                <table class="table table-borderless" id="bookedTicketsTable" style="background-color:#333333; opacity: 0.7;color: white">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTableDateReservation(0)">Reservation Date</th>
+                            <th onclick="sortTableNumerically(1)">Departure Seat<i class="fa fa-sort"></i></th>
+                            <th onclick="sortTableNumerically(2)">Arrival Seat</th>   
+                            <th>Username</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+    </div>
+
+    <div class="container" style="width: 2000px;margin-top: 50px;">
+        <h3 class="text-center" style="color:white">Purchased Tickets</h3>
+           
+        <table class="table table-borderless" id="purchasedTicketsTable" style="background-color:#333333; opacity: 0.7;color: white">
+            <thead>
+                <tr>
+                    <th onclick="sortTableDate(0)">Purchase Date</th>
+                    <th onclick="sortTableNumericallyPurchase(1)">Departure Seat<i class="fa fa-sort"></i></th>
+                    <th onclick="sortTableNumericallyPurchase(2)">Arrival Seat</th>
+                    <th>Username</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="clear: both"></div>
+  
+        <div class="footer-copyright text-center py-3" style="color:white">© 2019 Copyright: Flaeago Airlines
+    </div>
+    <script>
+        function sortTableNumerically(n) {
+          var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+          table = document.getElementById("bookedTicketsTable");
+          switching = true;
+          dir = "asc";
+        
+          while (switching) {
+            
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+            
+              shouldSwitch = false;
+              
+              x = rows[i].getElementsByTagName("TD")[n];
+              y = rows[i + 1].getElementsByTagName("TD")[n];
+            
+              if (dir == "asc") {
+                if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                  shouldSwitch = true;
+                  break;
+                }
+              } else if (dir == "desc") {
+                if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                  shouldSwitch = true;
+                  break;
+                }
+              }
+            }
+            if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+              switchcount ++;
+            } else {
+              
+              if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+              }
+            }
+          }
+        }
+    </script>
+    <script>
+     function sortTableNumericallyPurchase(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("purchasedTicketsTable");
+        switching = true;
+        dir = "asc";
+      
+        while (switching) {
+          
+          switching = false;
+          rows = table.rows;
+          for (i = 1; i < (rows.length - 1); i++) {
+          
+            shouldSwitch = false;
+            
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+          
+            if (dir == "asc") {
+              if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                shouldSwitch = true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchcount ++;
+          } else {
+            
+            if (switchcount == 0 && dir == "asc") {
+              dir = "desc";
+              switching = true;
+            }
+          }
+        }
+      }
+  </script>
+   <script>
+    function sortTableDate(n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById("purchasedTicketsTable");
+      switching = true;
+      dir = "asc";
+    
+      while (switching) {
+        
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+        
+          shouldSwitch = false;
+          
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+        
+          if (dir == "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchcount ++;
+        } else {
+          
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+</script>
+<script>
+    function sortTableDateReservation(n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById("bookedTicketsTable");
+      switching = true;
+      dir = "asc";
+    
+      while (switching) {
+        
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+        
+          shouldSwitch = false;
+          
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+        
+          if (dir == "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchcount ++;
+        } else {
+          
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+</script>
+
+</body> 
+</html>

@@ -1,0 +1,51 @@
+body {
+    background-image: url('../images/jeremy-bishop-191089-unsplash.jpg');
+    min-height: 680px;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.row > .col-12 > .jumbotron {
+
+    align-items: center;
+    background:transparent;
+    color:#38343a;
+}
+
+.navbar
+   {
+      position:relative;
+      height:55px !important;
+   }
+
+.form-inline .form-group {
+    margin-right:4px;
+    margin-top: 4px;
+   
+}
+
+.table {
+    margin-top: 30px;
+}
+
+
+.form-inline .dropdown {
+    margin-right: 4px;
+    margin-top: 4px;
+}
+
+footer .col-sm-8 {
+    display: flex;
+    justify-content: flex-end;
+}
+  
+footer ul {
+    list-style: none;
+}
+
+footer li img {
+    width: 32px;
+    height: 32px;
+}

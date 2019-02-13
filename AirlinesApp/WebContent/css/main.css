@@ -1,0 +1,93 @@
+body {
+    
+    font-family: 'Poppins', sans-serif !important;
+    background-image: url('../images/jeremy-bishop-191089-unsplash.jpg');
+    background-repeat: no-repeat;
+    min-height: 680px;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+.row > .col-12 > .jumbotron {
+
+    align-items: center;
+    background-color: transparent;
+    color: #706774;
+    text-shadow: 0.25px 0.25px 0.25px #000000;
+}
+
+.table-scroll tbody {
+    position: absolute;
+    margin-right: 93px;
+    overflow-y: scroll;
+    height: 250px;
+}
+
+.table-scroll tr {
+    width: 100%;
+    table-layout: fixed;
+    display: inline-table;
+}
+
+.table-scroll thead > tr > th {
+    border: none;
+}
+
+
+
+.rows {
+    min-height: 600px;
+}
+
+.rowt {
+    background-color: #a8a0a9
+}
+
+
+.form-inline .form-group {
+    margin-right:10px;
+    margin-top: 10px;
+    
+}
+
+
+.form-inline .form-group .form-control {
+    width: 250px;
+    
+}
+
+.table {
+    margin-bottom: 70px;
+}
+
+
+.form-inline .dropdown {
+    margin-right: 4px;
+    margin-top: 4px;
+}
+
+footer .col-sm-8 {
+    display: flex;
+    justify-content: flex-end;
+}
+  
+footer ul {
+    list-style: none;
+}
+
+footer li img {
+    width: 32px;
+    height: 32px;
+}
+
+/* footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: aqua;
+} */
+  

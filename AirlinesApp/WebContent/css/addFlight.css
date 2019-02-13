@@ -1,0 +1,32 @@
+body {
+    font-family: 'Poppins', sans-serif !important;
+    background-image: url('../images/liane-metzler-3301-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    margin-top: 730px;
+}
+
+footer .col-sm-8 {
+    display: flex;
+    justify-content: flex-end;
+}
+  
+footer ul {
+    list-style: none;
+}
+
+footer li img {
+    width: 32px;
+    height: 32px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+}

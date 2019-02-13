@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User View</title>
+    <link rel="stylesheet" type="text/css" href="css/userview.css">
+    <link rel = "stylesheet" href ="bootstrap/css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.js"></script>
+	  <script src = "js/UserView.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <script src = "bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"  style="opacity: 0.9;background-color: #514e4e">
+            <a href="AdminWindow.html" class="navbar-brand" style="color:black">Flaego Airlines</a>
+            <a href="" id="logoutLink" style="padding-right: 30px;color: black; text-decoration: none">Log Out</a>
+            <a href="LoggedInUser.html"  style="padding-right: 30px;color: black; text-decoration: none">User Profile</a>
+        </nav>
+        <div class="container" style="margin-top: 63px;">
+            <form class = "form-inline my-2 my-xs-0">
+                    <div class="form-group">
+                        <input type="text" placeholder="Username" class="form-control" id = "usernameFilterInput" style="opacity: 0.8;">
+                    </div>
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="role" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Role
+                      </button>
+                       <div class ="dropdown-menu first-opt-hidden" id="dropdownRole" aria-labelledBy="dropdownMenuButton">
+                            <a class="dropdown-item" id = "user" href="#">USER</a>
+                            <a class="dropdown-item" id = "admin" href="#">ADMIN</a>
+                       </div>
+                   </div>
+                    
+                </form>				
+            <div class="table-title">
+                <div class="row">
+                    <table class="table table-bordered" id="userViewTable"  style="border:none;background-color: #817c7c;color:white;opacity: 0.8;">
+                        <thead style="background-color: #514e4e">
+                            <tr>
+                                <th onclick="sortTable(0)">Username <i class="fa fa-sort"></i></th>
+                                <th>Registration Date</th>
+                                <th onclick="sortTable(3)">Role<i class="fa fa-sort"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id = "usernameFilterInput"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                </div>
+            </div>
+        </div>
+        
+        <footer class = "pull-right-row"  style="opacity: 0.9;color: white;float: right;">
+            <div class = "row" style="margin-top:10px;">
+              <p class = "col-sm-4">&copy; 2018 Flaego airlines</p>
+              <ul class = "col-sm-8">
+                <li class = "col-sm-1">
+                  <img src = "https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/twitter.svg">
+                </li>
+                <li class = "col-sm-1">
+                  <img src = "https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg">
+                </li>
+                <li class = "col-sm-1">
+                  <img src = "https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/instagram.svg">
+                </li>
+                <li class = "col-sm-1">
+                  <img src = "https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/medium.svg">
+                </li>
+              </ul>
+            </div>
+     </footer>
+      <script>
+		function sortTable(n) {
+		  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+		  table = document.getElementById("userViewTable");
+		  switching = true;
+		  dir = "asc";
+		
+		  while (switching) {
+		    
+		    switching = false;
+		    rows = table.rows;
+		    for (i = 1; i < (rows.length - 1); i++) {
+		     
+		      shouldSwitch = false;
+		      
+		      x = rows[i].getElementsByTagName("TD")[n];
+		      y = rows[i + 1].getElementsByTagName("TD")[n];
+		    
+		      if (dir == "asc") {
+		        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+		          shouldSwitch = true;
+		          break;
+		        }
+		      } else if (dir == "desc") {
+		        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+		          shouldSwitch = true;
+		          break;
+		        }
+		      }
+		    }
+		    if (shouldSwitch) {
+		      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+		      switching = true;
+		      switchcount ++;
+		    } else {
+		      
+		      if (switchcount == 0 && dir == "asc") {
+		        dir = "desc";
+		        switching = true;
+		      }
+		    }
+		  }
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flight Page</title>
+    <link rel="stylesheet" type="text/css" href="css/ticketBooking.css">
+    <link rel = "stylesheet" href ="bootstrap/css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src = "js/TicketBooking.js"></script>
+    <script src = "bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4b4a4a; opacity: 0.6; color:white;">
+            <a href="AdminWindow.html" class="navbar-brand" style=" color:white;">Flaego Airlines</a>
+                <ul class = "navbar-nav mr-auto">
+                    <li id="adminNav">
+                        <a href = "UserView.html" style="padding-right: 30px;color: white; text-decoration: none">View Users</a>
+                    </li>
+                    <a href="LoggedInUser.html"  style="padding-right: 30px;color: white; text-decoration: none">User Profile</a>
+                    <a href="" id="logoutLink" style="padding-right: 30px;color: white; text-decoration: none">Log Out</a>
+                </ul>
+                
+        </nav>
+        <div class="container" style="max-width:500px;height:350px;padding:40px 20px;background:#767474;opacity: 0.8;margin-top:25px;color:white;">
+                <h3 class="text-center">FLIGHT INFO</h3>
+                <table class='table borderless' id= "ticketTable">
+                        <tr>
+                            <td>Flight Number:</td>                 
+                            <td><input type = "text" class="form-control" placeholder="Flight Number" name="flightNum" id="flightNumInputFinal"></td>
+                        </tr>
+                        <tr> 
+                            <td>Departure:</td>                 
+                            <td><input type = "text" class="form-control" placeholder="Departure" name="departure" id="departureInputFinal"></td>
+                        </tr>
+                        <tr> 
+                            <td>Departure Time:</td>                 
+                            <td><input type = "text" class="form-control" placeholder="Departure Time" name="departureTime" id="departureTimeInputFinal"></td>
+                        </tr>
+                        <tr> 
+                            <td>Departure seat:</td>                 
+                            <td><input type = "text" class="form-control" placeholder="Departure Seat" name="departureSeat" id="departureSeatInput"></td>
+                            
+                        <tr> 
+                        
+                </table>
+        </div>
+            <div class="container" style="max-width:500px;height:350px;padding:40px 20px;background:#767474;opacity: 0.8;margin-top:25px;color:white;">
+                <table class='table borderless' id= "roundtripTicketTable">
+                    <h3 class="text-center">ROUNDTRIP INFO</h3>
+                    <tr>
+                        <td>Roundtrip Flight Number:</td>                 
+                        <td><input type = "text" class="form-control" placeholder="Flight Number" name="flightNum" id="roundtripFlightNumInputFinal"></td>
+                    </tr>
+                    <tr> 
+                        <td>Roundtrip Departure:</td>                 
+                        <td><input type = "text" class="form-control" placeholder="Departure" name="departure" id="roundtripDepartureInputFinal"></td>
+                    </tr>
+                    <tr> 
+                        <td>Roundtrip Departure Time:</td>                 
+                        <td><input type = "text" class="form-control" placeholder="Departure Time" name="departureTime" id="roundtripDepartureTimeInputFinal"></td>
+                    </tr>
+                    <tr> 
+                        <td>Roundtrip seat:</td>                 
+                        <td><input type = "text" class="form-control" placeholder="Roundtrip Seat" name="roundtripSeat" id="roundtripSeatInput"></td>
+                    </tr>
+                    
+                </table>
+               
+        </div> 
+        <div class="container" style="max-width:500px;height:390px;padding:40px 20px;background:#767474;opacity: 0.8;margin-top:30px;color:white;">
+            <table class='table borderless' id= "infoTable">
+                <tr> 
+                    <td>Ticket Price:</td>                 
+                    <td><input type = "text" class="form-control" placeholder="Ticket Price" name="ticketPrice" id="ticketPriceInput"></td>
+                </tr>
+                <tr> 
+                    <td>First Name:</td>                 
+                    <td><input type = "text" class="form-control" placeholder="First Name" name="firstName" id="firstNameInput"></select></td>
+                </tr>
+                <tr> 
+                    <td>Surname:</td>                 
+                    <td><input type = "text" class="form-control" placeholder="Surname" name="surname" id="surnameInput"></select></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" value="purchase" id ="btnPurchase" class="btn btn-secondary btn-block" style="margin-top:10px;width:110px;background-color: #585555;color: white;padding-right:10px; margin-left: 60px;">Purchase</button></td>
+                    <td><button type="submit" value="reservation" id ="btnReservation" class="btn btn-secondary btn-block" style="margin-top:10px;width:110px;background-color: #585555;color: white;padding-right:10px; margin-left: 60px;">Reservation</button></td>
+                </tr>
+                <tr>
+                    <td> <button type="submit" value="previous" id ="btnPrevious" class="btn btn-secondary btn-block" style="margin-top:10px;width:110px;background-color: #585555;color: white;padding-right:10px; margin-left: 60px;">Previous</button></td>
+                    <td> <button type="submit" value="cancel" id ="btnCancel" class="btn btn-secondary btn-block" style="margin-top:10px;width:110px;background-color: #585555;color: white; margin-left: 60px;">Cancel</button></td>
+                </tr>
+                
+            </table>      
+        </div>   
+        <div class="container" id="seatStyle" style="max-width:390px;height:180px;float:left;padding:40px 20px;background:#767474;opacity: 0.8;margin-top:-1150px;margin-left:20px;color:white;">
+            <h5 class="text-center" style="margin-bottom:10px;">FLIGHT SEATS</h5> </br>
+            <button type="button" style="margin-bottom:80px;margin-right: 10px; width:40px; height:40px; color:white;background-color:#676959; "><p style="margin-left:40px">Available</p></button>
+            <button type="button" style="margin-bottom:80px;margin-right: 80px;float: right; width:40px; height:40px; color:white;background-color:rgb(58, 57, 57); "><p style="margin-left:40px">Taken</p></button>
+        </div>
+        <div class="container" id="seat" style="max-width:390px;height:1500px;float:left;padding:40px 20px;background:#767474;opacity: 0.8;margin-top:-970px;margin-left:20px;color:white;">
+        </div>
+        <div class="container" id="seatStyle" style="max-width:390px;height:180px;float:right;padding:40px 20px;background:#767474;opacity: 0.8;margin-top:-1150px;margin-right:20px;color:white;">
+            <h5 class="text-center">ROUNDTRIP SEATS</h5>
+            <button type="button" style="margin-top:20px;margin-right: 10px; width:40px; height:40px; color:white;background-color:#676959; "><p style="margin-left:40px">Available</p></button>
+            <button type="button" style="margin-top:20px;margin-right: 80px;float: right; width:40px; height:40px; color:white;background-color:rgb(58, 57, 57); "><p style="margin-left:40px">Taken</p></button>
+        </div>
+        <div class="container" id="roundtripSeat" style="max-width:390px;height:1500px;float:right;padding:40px 20px;background:#767474;opacity: 0.8;margin-top:-970px;margin-right:20px;color:white;">
+            
+        </div>
+        <div style="clear: both"></div>
+  
+        <div class="footer-copyright text-center py-3" style="color:white">© 2019 Copyright:Flaeago Airlines
+        </div>
+
+        
+</body>
+
+</html>

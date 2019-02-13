@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Profile</title>
+    <link rel="stylesheet" type="text/css" href="css/userProfile.css">
+    <link rel = "stylesheet" href ="bootstrap/css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src = "js/UserProfile.js"></script>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <script src = "bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+</head>
+<body>
+       
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #8c8f92;opacity:0.7">
+        <a href="AdminWindow.html" class="navbar-brand" style="color: white">Flaego Airlines</a>
+        <ul class = "navbar-nav mr-auto">
+            <li id="adminNav">
+                <a href = "UserView.html" style="padding-right: 30px;color: white; text-decoration: none">View Users</a>
+
+            </li>
+            <a href="" id="logoutLink" style="padding-right: 30px;color: white; text-decoration: none">Log Out</a>
+        </ul>
+        
+    </nav>
+    <div class="container">
+            <div id="myModal" class="modal fade" role="dialog" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete User</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you want to delete user? </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id = "btnYes">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id = "btnClose">Cancel</button>
+                        
+                    </div>
+                    </div>
+                    
+                </div>
+        </div>
+    <div class="container" style="max-width:650px;height:450px;padding:40px 20px;font-family: Ubuntu-Regular;background:#767474;opacity: 0.7;margin-top:-650px;color: white;">
+        <h3 class="text-center" style="font-family: Ubuntu-Bold;">USER PROFILE</h3>
+        <table class='table borderless'>
+            <tr>
+                <td>Username:</td>
+                <td id = "usernameCell"></td>
+            </tr>
+            <tr>
+                <td>Registration Date:</td>
+                <td id = "registerDateCell"></td>
+            </tr>
+            <tr>
+                <td>Role:</td>
+                <td id = "roleCell"></td>
+            </tr>
+            <tr>
+                <td>Status:</td>
+                <td id = "blockedUserCell"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+          
+        </table>
+        <button type="submit" value="Edit" id ="editSubmit" class="btn btn-secondary btn-block" style="width:300px;background-color: #585555;color: white; margin-left: 150px;">Edit</button>
+        <button type="submit" value="Delete" id ="deleteSubmit" class="btn btn-secondary btn-block"  style="width:300px;background-color: #585555;color: white; margin-left: 150px;">Delete</button>
+    </div>
+        <div class="container" style="width:500px;margin-top:30px;">
+                    <h3 class="text-center" style="color:white">Booked Tickets</h3>
+                    <table class="table table-borderless" id="bookedTicketsTable" style="background-color:#333333; opacity: 0.7;color: white">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Reservation Date<i class="fa fa-sort"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+        </div>
+
+        <div class="container" style="width:500px;margin-top: 50px;">
+            <h3 class="text-center" style="color:white">Purchased Tickets</h3>
+            <table class="table table-borderless" id="purchasedTicketsTable" style="background-color:#333333; opacity: 0.7;color: white">
+                <thead>
+                    <tr>
+                        <th class="text-center">Purchase Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+    <div style="clear: both"></div>
+  
+    <div class="footer-copyright text-center py-3" style="color:white">© 2019 Copyright:Flaeago Airlines
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Flights</title>
+    <link rel="stylesheet" type="text/css" href="css/addFlight.css">
+    <link rel = "stylesheet" href ="bootstrap/css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.js"></script>
+	<script src = "js/AddFlights.js"></script>
+    <script src = "bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+</head>
+<body>
+		 <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #8c8f92;opacity:0.7">
+            <a href="AdminWindow.html" class="navbar-brand" style=" color:white;">Flaego Airlines</a>
+	        <ul class = "navbar-nav mr-auto">
+                <a href = "LoggedInUser.html" style="padding-right: 30px;color:white; text-decoration: none">View Profile</a>
+                <a href = "UserView.html" id="userView" style="padding-right: 30px;color:white; text-decoration: none">User View</a>
+                <a href="" id="logoutLink" style="padding-right: 30px;color:white; text-decoration: none">Log Out</a>
+        
+	        </ul>
+	    </nav>
+        <div class="container-fluid"  style="max-width:650px;height:740px;padding:40px 20px;background:#767474;opacity: 0.8;margin-top:30px;color:white;">
+            <h3 class="text-center">ADD FLIGHT</h3>
+                <table class='table borderless'>
+                    <tr>
+                        <td>Flight Number:</td>                 
+                        <td><input type = "text" class="form-control" placeholder="Flight Number" name="flightNumber" id="flightNumInput"></td>
+                    </tr>
+                    <tr>    
+                        <td>Departure date:</td>                 
+                        <td><input type = "date" class="form-control" placeholder="Departure Date" name="departureDate" id="departureDateInput"></td>
+                    </tr>
+                    <tr>  
+                        <td>Departure Time:</td>                 
+                        <td><input type = "time" class="form-control" placeholder="Departure Time" name="departureTime" id="departureTimeInput"></td>
+                    </tr>
+                    <tr> 
+                        <td>Arrival Date:</td>                 
+                        <td><input type = "date" class="form-control" placeholder="arrival Date" name="arrivalDate" id="arrivalDateInput"></td>
+                    </tr>
+                    <tr> 
+                        <td>Arrival Time:</td>                 
+                        <td><input type = "time" class="form-control" placeholder="arrival Time" name="arrivalTime" id="arrivalTimeInput"></td>
+                    </tr>
+                    <tr>
+                        <td>Departures:</td>
+                        <td>
+                            <div class="dropdown">  
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="departures" style="width:430px;background-color: #585555;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Departures
+                                </button>
+                                <div class ="dropdown-menu first-opt-hidden" id="dropdownDepartures"  aria-labelledBy="dropdownMenuButton"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Arrivals:</td>
+                        <td>
+                            <div class="dropdown">  
+                            <button class="btn btn-secondary dropdown-toggle" type="button" style="width:430px;background-color: #585555;" id="arrivals" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Arrivals
+                            </button>
+                            <div class ="dropdown-menu first-opt-hidden" id="dropdownArrivals" aria-labelledBy="dropdownMenuButton"></div>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td>Seat Number:</td>                 
+                        <td><input type = "text" class="form-control" placeholder="Seat Number" name="seatNum" id="seatNumInput"></td>
+                    </tr>
+                    <tr> 
+                        <td>Ticket Price:</td>                 
+                        <td><input type = "text" class="form-control" placeholder="Ticket Price" name="ticketPrice" id="ticketPriceInput"></td>
+                    </tr>
+                </table>
+                <button type="submit" value="submit" id ="flightSubmit" class="btn btn-secondary btn-block" style="width:300px;background-color: #585555;color: white; margin-left: 150px;">Submit</button>
+        </div>
+        <div style="clear: both"></div>
+  
+        <div class="footer-copyright text-center py-3" style="color:white">© 2019 Copyright:Flaeago Airlines
+        </div>
+
+</body>
+</html>

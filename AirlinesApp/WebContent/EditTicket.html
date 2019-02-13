@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ticket Edit</title>
+    <link rel="stylesheet" type="text/css" href="css/ticketBooking.css">
+    <link rel = "stylesheet" href ="bootstrap/css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src = "js/TicketEdit.js"></script>
+    <script src = "bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #8c8f92;opacity:0.7">
+                <a href="AdminWindow.html" class="navbar-brand">Flaego Airlines</a>
+                <ul class = "navbar-nav mr-auto">
+                    <li id="adminNav">
+                        <a href = "UserView.html" style="padding-right: 30px;color:white; text-decoration: none">View Users</a>
+                    </li>
+                    <a href = "LoggedInUser.html" style="padding-right: 30px;color: white; text-decoration: none">View Profile</a>
+                    <a href="" id="logoutLink" style="padding-right: 30px;color: white; text-decoration: none">Log Out</a>
+                </ul>
+                
+        </nav>
+       
+      
+        </div> 
+        <div class="container" style="max-width:500px;height:450px;padding:40px 20px;background:#767474;opacity: 0.8;margin-top:30px;color:white;">
+            <h3 class= "text-center">Edit Ticket Info</h3>
+            <table class='table borderless' id= "infoTable" style="margin-top:20px;">
+                <tr> 
+                    <td>First Name:</td>                 
+                    <td><input type = "text" class="form-control" placeholder="First Name" name="firstName" id="firstNameInput"></select></td>
+                </tr>
+                <tr> 
+                    <td>Surname:</td>                 
+                    <td><input type = "text" class="form-control" placeholder="Surname" name="surname" id="surnameInput"></select></td>
+                </tr>
+                <tr> 
+                    <td>Roundtrip seat:</td>                 
+                    <td><input type = "text" class="form-control" placeholder="Roundtrip Seat" name="roundtripSeat" id="roundtripSeatInput"></td>
+                </tr>
+                <tr> 
+                    <td>Departure seat:</td>                 
+                    <td><input type = "text" class="form-control" placeholder="Departure Seat" name="departureSeat" id="departureSeatInput"></td>  
+                <tr> 
+                
+            </table>  
+            <button type="submit" value="update" id ="btnUpdate" class="btn btn-secondary btn-block" style="margin-top:10px;width:300px;background-color: #585555;color: white; margin-left: 80px;">Update</button>    
+        </div>   
+        <div class="container" id="seat" style="max-width:390px;height:1500px;float:left;padding:40px 20px;background:#767474;opacity: 0.8;margin-top:-450px;margin-left:20px;color:white;">
+        </div>
+        <div class="container" id="roundtripSeat" style="max-width:390px;height:1500px;float:right;padding:40px 20px;background:#767474;opacity: 0.8;margin-top:-450px;margin-right:20px;color:white;">
+            <!-- <h4 class="text-center">Roundtrip Seat Chart</h3> -->
+        </div>
+        <div style="clear: both"></div>
+  
+        <div class="footer-copyright text-center py-3" style="color:white">© 2019 Copyright:Flaeago Airlines
+        </div>
+
+</body>
+
+</html>

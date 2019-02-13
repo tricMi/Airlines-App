@@ -1,0 +1,89 @@
+@font-face {
+    font-family: Ubuntu-Regular;
+    src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
+}
+  
+@font-face {
+    font-family: Ubuntu-Bold;
+    src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
+}
+
+body {
+    background-image: url('../images/angela-compagnone-1293247-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    font-family: 'Ubuntu-Regular', sans-serif !important;
+    
+}
+
+footer .col-sm-8 {
+    display: flex;
+    justify-content: flex-end;
+}
+  
+footer ul {
+    list-style: none;
+}
+
+footer li img {
+    width: 32px;
+    height: 32px;
+}
+
+footer {
+    margin-top: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-left: -135px;
+    background-color: #f1ebf4;
+}
+
+#seat {
+    display: grid;
+    grid-template-columns: 50px 50px 100px 50px 50px 50px;
+}
+
+#us {
+    margin-top:10px;
+    margin-right: 10px;
+    width:40px;
+    height:40px;
+    color:white;
+}
+
+#rs {
+    margin-top:10px;
+    margin-right: 10px;
+    width:40px;
+    height:40px;
+    color:white;
+}
+
+#roundtripSeat {
+    display: grid;
+    grid-template-columns: 50px 50px 100px 50px 50px 50px;
+}
+
+ 
+
+
+.table-scroll tbody {
+    position: absolute;
+    margin-right: 93px;
+    overflow-y: scroll;
+    height: 250px;
+}
+
+.table-scroll tr {
+    width: 100%;
+    table-layout: fixed;
+    display: inline-table;
+}
+
+.table-scroll thead > tr > th {
+    border: none;
+}
+

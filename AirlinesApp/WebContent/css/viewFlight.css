@@ -1,0 +1,44 @@
+@font-face {
+    font-family: Ubuntu-Regular;
+    src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
+}
+  
+@font-face {
+    font-family: Ubuntu-Bold;
+    src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
+}
+
+body {
+    font-family: 'Ubuntu-Regular', sans-serif !important;
+	background-image: url('../images/liane-metzler-3301-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer .col-sm-8 {
+    display: flex;
+    justify-content: flex-end;
+}
+  
+footer ul {
+    list-style: none;
+}
+
+footer li img {
+    width: 32px;
+    height: 32px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.navbar
+{
+    position:relative;
+    height:55px !important;
+}

@@ -1,0 +1,60 @@
+@font-face {
+    font-family: Ubuntu-Regular;
+    src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
+}
+  
+@font-face {
+    font-family: Ubuntu-Bold;
+    src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
+}
+
+body {
+    
+    background-image: url('../images/nicolas-j-leclercq-715045-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Ubuntu-Regular', sans-serif !important;
+    
+}
+
+.navbar
+{
+    position:relative;
+    height:55px !important;
+}
+
+.form-group {
+    margin-left: 300px;
+    margin-right: 10px;
+}
+
+.form-inline .dropdown {
+    margin-right: 4px;
+    margin-top: 4px;
+}
+
+footer .col-sm-8 {
+    display: flex;
+    justify-content: flex-end;
+}
+  
+footer ul {
+    list-style: none;
+}
+
+footer li img {
+    width: 32px;
+    height: 32px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 85%;
+    
+}
+
+.table {
+	background: #f1ebf4;
+    margin-top: 30px;
+}

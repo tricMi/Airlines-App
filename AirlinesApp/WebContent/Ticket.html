@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ticket Info</title>
+    <link rel="stylesheet" type="text/css" href="css/ticket.css">
+    <link rel = "stylesheet" href ="bootstrap/css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.js"></script>
+	<script src = "js/TicketView.js"></script>
+    <script src = "bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #8c8f92; ">
+        <a href="AdminWindow.html" class="navbar-brand" style="color: white">Flaego Airlines</a>
+        <a href="LoggedInUser.html"  style="padding-right: 30px;color: white; text-decoration: none">User Profile</a>
+        <a href = "UserView.html" id="userView" style="padding-right: 30px;color: white; text-decoration: none">User View</a>
+        <a href="" id="logoutLink" style="padding-right: 30px;color: white; text-decoration: none">Log Out</a>
+        
+    </nav>
+    <div class="container">
+            <div id="deleteModal" class="modal fade" role="dialog" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Reservation Delete</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you want to delete reservation? </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id = "btnYes">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id = "btnClose">Cancel</button>
+                        
+                    </div>
+                    </div>
+                    
+            </div>
+    </div>
+    <div class="container">
+            <div id="buyModal" class="modal fade" role="dialog" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Purchase Reservation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure that you want to purchase reservation? </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id = "btnYes">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id = "btnClose">Cancel</button>
+                        
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+    <div class="container" style="max-width:650px;height:750px;padding:40px 20px;font-family: Ubuntu-Regular;background:#767474;opacity: 0.7;margin-top:30px;color: white;">
+        <h3 class="text-center" style="font-family: Ubuntu-Bold;">TICKET INFO</h3>
+        <table class='table borderless'>
+            <tr>
+                <td>Departure Flight</td>
+                <td id = "departureFlightCell"></td>
+            </tr>
+            <tr>
+                <td>Roundtrip Flight</td>
+                <td id = "roundtripFlightCell"></td>
+            </tr>
+            <tr>
+                <td>Departure Seat</td>
+                <td id = "departureSeatCell"></td>
+            </tr>
+            <tr>
+                <td>Roundtrip Seat</td>
+                <td id = "roundtripSeatCell"></td>
+            </tr>
+            <tr>
+                <td>Reservation Date</td>
+                <td id = "reservationDateCell"></td>
+            </tr>
+            <tr>
+                <td>Purchase Date</td>
+                <td id = "purchaseDateCell"></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td id = "usernameCell"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td id = "nameCell"></td>
+            </tr>
+            <tr>
+                <td>Surname</td>
+                <td id = "surnameCell"></td>
+            </tr>
+            <tr>
+                <td>Ticket Price</td>
+                <td id = "ticketPriceCell"></td>
+            </tr>
+        </table>
+        <button type="submit" value="Edit" id ="editSubmit" class="btn btn-secondary btn-block" style="width:300px;background-color: #585555;color: white; margin-left: 150px;">Edit</button>
+        <button type="submit" value="Delete" id ="deleteSubmit" class="btn btn-secondary btn-block"  style="width:300px;background-color: #585555;color: white; margin-left: 150px;">Delete</button>
+        <button type="submit" value="Buy" id ="buySubmit" class="btn btn-secondary btn-block"  style="width:300px;background-color: #585555;color: white; margin-left: 150px;">Buy Ticket</button>
+    </div>
+    <div style="clear: both"></div>
+  
+        <div class="footer-copyright text-center py-3" style="color:white">© 2019 Copyright: Flaeago Airlines
+    </div>
+
+</body>
+</html>

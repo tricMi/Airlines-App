@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Window</title>
+    <link rel="stylesheet" type="text/css" href="css/adminWindow.css">
+    <link rel = "stylesheet" href ="bootstrap/css/bootstrap.min.css">
+    <script src = "js/jquery-3.3.1.js"></script>
+    <script src = "js/AdminUser.js"></script>
+    <script src = "bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#757376; opacity:0.7;">
+        <a  href="#" class="navbar-brand"  style="padding-right: 50px;">Flaego Airlines</a>
+        <ul class = "navbar-nav mr-auto">
+            <li id="adminNav">
+                <a href = "AddFlight.html" style="padding-right: 30px;color: black; text-decoration: none">Add Flights</a>
+                <a href = "UserView.html" style="padding-right: 30px;color: black; text-decoration: none">View Users</a>
+                <a href = "AllTickets.html" style="padding-right: 30px;color: black; text-decoration: none">Tickets</a>
+                <a href = "TicketPhaseOne.html" id = "linkBuy" style="padding-right: 30px;color: black; text-decoration: none">Book/Purchase Ticket</a>
+                <a href = "Reports.html" style="padding-right: 30px;color: black; text-decoration: none">Reports</a>
+            </li>
+            <li id="userNav">
+                <a href = "TicketPhaseOne.html" id = "linkBuy" style="padding-right: 30px;color: black; text-decoration: none">Book/Purchase Ticket</a>
+            </li>
+           
+            <a href = "LoggedInUser.html" style="padding-right: 30px;color: black; text-decoration: none">View Profile</a>
+            <a href="" id="logoutLink" style="padding-right: 30px;color: black; text-decoration: none">Log Out</a>
+        </ul>
+    </nav>
+    <div class = "row">
+        <div class="col-12">
+            <div class="jumbotron" id="intro">
+                
+                <div class="container" style="max-width:1000px;padding:40px 20px;background:#757376;opacity: 0.6;margin-top: -20px;">
+                    <form class = "form-inline my-2 my-xs-0">
+                            <div class="form-group">
+                                <input type="text" placeholder="Flight Number" class="form-control" id="flightNumFilterInput">
+                            </div>
+                           
+                            <div class="form-group">
+                               <input type="text" placeholder="Min Price" class="form-control" id="minTicketPriceFilterInput">
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" placeholder="Max Price" class="form-control" id="maxTicketPriceFilterInput">
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="departures" style="background-color: #59575a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Departures
+                                </button>
+                                <div class ="dropdown-menu first-opt-hidden" id="dropdownDepartures" aria-labelledBy="dropdownMenuButton"></div>
+                            </div>
+
+                            <div class="dropdown">
+                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="arrivals" data-toggle="dropdown" style="background-color: #59575a" aria-haspopup="true" aria-expanded="false">
+                                     Arrivals
+                                 </button>
+                                  <div class ="dropdown-menu first-opt-hidden" id="dropdownArrivals" aria-labelledBy="dropdownMenuButton"></div>
+                            </div>
+
+                            <div class="form-group">
+                              
+                                 <input type="date" style="width:227px;" placeholder="Departure Date" name = "departureDate" id="departureDateInput" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                               
+                                <input type="time" style="width:227px;" placeholder="Departure Time" name = "departureTime" id="departureTimeInput" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                
+                                <input type="date" style="width:227px;" placeholder="Arrival Date" name = "arrivalDate" id="arrivalDateInput" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                
+                                <input type="time" style="width:227px;" placeholder="Arrival Time" name = "arrivalTime" id="arrivalTimeInput" class="form-control">
+                            </div>
+                           
+                           
+                    </form>
+                  </div>
+                <h2 class="text-center" style="margin-top: 10px;">Available Flights</h2>
+                <table class="table table-hover" id = "flightsTable">
+                    <thead style="background-color:#645f65;opacity:0.8;color:white;">
+                        <tr>
+                            <th onclick="sortTable(0)">Flight Number</th>
+                            <th onclick="sortTable(1)">Departure Date</th>
+                            <th onclick="sortTable(2)">Arrival Date</th>
+                            <th onclick="sortTable(3)">Departures</th>
+                            <th onclick="sortTable(4)">Arrivals</th>
+                            <th onclick="sortTableNumerically(5)">Ticket Price</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color:black;background-color: #8c8c8c;opacity: 0.7;">
+	                  		<tr>
+								<td id = "flightNumFilterInput"></td>
+								<td id ="minTicketPriceFilterInput"></td>
+								<td id ="maxTicketPriceFilterInput"></td>
+								<td id="departureDateInput"></td>
+								<td id="departureTimeInput"></td>
+								<td id = "arrivalDateInput"></td>
+								<td id = "arrivalTimeInput"></td>							
+							</tr>
+	                  	</tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer class = "container">
+        <div class = "row">
+          <p class = "col-sm-4" style="color:white">&copy; 2019 Flaego airlines</p>
+          <ul class = "col-sm-8">
+            <li class = "col-sm-1">
+              <img src = "https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/twitter.svg">
+            </li>
+            <li class = "col-sm-1">
+              <img src = "https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg">
+            </li>
+            <li class = "col-sm-1">
+              <img src = "https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/instagram.svg">
+            </li>
+            <li class = "col-sm-1">
+              <img src = "https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/medium.svg">
+            </li>
+          </ul>
+        </div>
+    </footer>
+    <script>
+        function sortTable(n) {
+          var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+          table = document.getElementById("flightsTable");
+          switching = true;
+          dir = "asc";
+        
+          while (switching) {
+            
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+            
+              shouldSwitch = false;
+              
+              x = rows[i].getElementsByTagName("TD")[n];
+              y = rows[i + 1].getElementsByTagName("TD")[n];
+            
+              if (dir == "asc") {
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                  shouldSwitch = true;
+                  break;
+                }
+              } else if (dir == "desc") {
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                  shouldSwitch = true;
+                  break;
+                }
+              }
+            }
+            if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+              switchcount ++;
+            } else {
+              
+              if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+              }
+            }
+          }
+        }
+  </script>
+  <script>
+    function sortTableNumerically(n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById("flightsTable");
+      switching = true;
+      dir = "asc";
+    
+      while (switching) {
+        
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+        
+          shouldSwitch = false;
+          
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+        
+          if (dir == "asc") {
+            if (Number(x.innerHTML) > Number(y.innerHTML)) {
+              shouldSwitch = true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (Number(x.innerHTML) < Number(y.innerHTML)) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchcount ++;
+        } else {
+          
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+</script>
+</body>
+</html>
